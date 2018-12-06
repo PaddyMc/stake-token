@@ -1,5 +1,5 @@
 <h1>
-  Staking Token: Smart Contract
+  Stake Token: Smart Contract
 </h1>
 <p>
   This token takes ETH to stake in the new CASPER Proof Of Stake consensus algorithm, as compensation
@@ -8,10 +8,10 @@
 </p>
 [Link to Frontend DApp source code](https://github.com/PaddyMc/stake-token-frontend)
 <hr />
-<h3>For deployment:</h3>
+<h3>For deployment</h3>
 <ul>
   <li>
-    Replace stakeAddress {StakeToken.sol #Line 12} with new staking address
+    Replace stakeAddress {StakeToken.sol #Line 12} with new staking address (Address of your main account)
   </li>
 </ul>
 
@@ -44,11 +44,21 @@
   </li>
 </ul>
 
+<p>To update the Smart Contract in the Stake token DApp</p>
+ <ul>
+  <li>
+    Take the Smart Contract address output from the 'migrate' command
+  </li>
+  <li>
+    Follow the instructions in the stake-token-frontend repo
+  </li>
+</ul>
+
 <h3>
   Smart Contract: Rinkeby
 </h3>
 <ul>
   <li>
-    0x5646e27678e80cbca74da47de242a99a0037523b
+    0xb08deb79cfb7a79f0628b690803a8a40d5432b83
   </li>
 </ul>

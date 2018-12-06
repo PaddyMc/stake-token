@@ -1,2 +1,7 @@
 /node_modules
 
+/build
+
+# uncomment this line when updating truffle.js
+# added for security reasons
+truffle.js
