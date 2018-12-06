@@ -14,37 +14,41 @@
     Replace stakeAddress {StakeToken.sol #Line 12} with new staking address
   </li>
 </ul>
-<h3>
-  To Deploy
-</h3>
-<ul>
-  <li>
-    truffle console
-  </li>
-  <li>
-    migrate
-  </li>
-  <li>
-    deploy development
-  </li>
-</ul>
 
 <h3>
   To Test
 </h3>
+<p>Ensure you have ganache or ganache-cli running</p>
 <ul>
   <li>
-    truffle console
+    npm install
+  </li>
+  <li>
+    truffle console --network development
   </li>
   <li>
     test
   </li>
 </ul>
+
+<h3>
+  To Deploy
+</h3>
+<p>Ensure you have updated the mnemonic and infura token in truffle.js</p>
+<ul>
+  <li>
+    truffle console --network rinkbey
+  </li>
+  <li>
+    migrate
+  </li>
+</ul>
+
 <h3>
   Smart Contract: Rinkeby
 </h3>
 <ul>
   <li>
-    0xa544f047beabd121fba260416e55f0dd733b3f2f
+    0x5646e27678e80cbca74da47de242a99a0037523b
   </li>
 </ul>

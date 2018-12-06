@@ -1,0 +1,16 @@
+{
+  "name": "stake-token",
+  "version": "1.0.0",
+  "description": "STK",
+  "main": "truffle.js",
+  "dependencies": {
+    "truffle-hdwallet-provider": "^0.0.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaddyMc/stake-token.git"
+  },
+  "author": "PaddyMc",
+  "license": "MIT"
+}
