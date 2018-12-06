@@ -16,5 +16,8 @@ module.exports = {
     //   gas: 4500000,
     //   gasPrice: 10000000000,
     // }
+  },
+  mocha: {
+    enableTimeouts: false
   }
 };
