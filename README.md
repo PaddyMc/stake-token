@@ -6,7 +6,7 @@
   the contract distributes STK which will grow in value based on the amount of 
   time the token is held.
 </p>
-<p>[Link to Frontend DApp source code](https://github.com/PaddyMc/stake-token-frontend)</p>
+[Link to Frontend DApp source code](https://github.com/PaddyMc/stake-token-frontend)
 <hr />
 <h3>For deployment:</h3>
 <ul>

@@ -1,5 +1,9 @@
 var StakeToken = artifacts.require("../contracts/StakeToken.sol");
 
+delay = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 contract('StakeToken', function(accounts) {
   var owner = accounts[0];
   var staker = accounts[1];
@@ -25,7 +29,7 @@ contract('StakeToken', function(accounts) {
   })
 
   it("Mints new tokens", async function () {
-    let stake = await stakeTokenContract.stake({from:staker, value: arbitraryAmount})
+    await stakeTokenContract.stake({from:staker, value: arbitraryAmount})
     const balance = await stakeTokenContract.balanceOf(staker)
     assert.equal(balance.toString(), arbitraryAmount, "incorrect amount minted")
   })
@@ -39,6 +43,8 @@ contract('StakeToken', function(accounts) {
   it("Redeems a stake amount", async function () {
     await stakeTokenContract.stake({from:staker, value: arbitraryAmount * 15})
     const balance = await stakeTokenContract.balanceOf(staker)
+    // delay used for testing percentGained variable
+    // await delay(280040)
     const stakePaid = await stakeTokenContract.redeemStake(balance, {from:staker})
     const newBalance = await stakeTokenContract.balanceOf(staker)
 

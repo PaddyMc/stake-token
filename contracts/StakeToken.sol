@@ -41,7 +41,6 @@ contract StakeToken is StakeTokenBase {
     balances[msg.sender] = INITIAL_SUPPLY;
   }
 
-  // Staking Functions
   function getStakeAddress() 
     public 
     pure 
@@ -61,8 +60,9 @@ contract StakeToken is StakeTokenBase {
 
     stakers[msg.sender].ethStart = stakeAddress.balance > 0 ? stakeAddress.balance : 1;
     stakers[msg.sender].initialSupply = msg.value;
+
+    //should not be used, OK for POC on testnet
     uint time = now;
-    //should not be used, ok for POC on testnet
     stakers[msg.sender].time = time;
     stakers[msg.sender].returnTokens = false;
     stakers[msg.sender].percentReturn = 0;
@@ -74,7 +74,7 @@ contract StakeToken is StakeTokenBase {
     // This address will be used to stake in Ethereum 2.0/CASPER/Serinity
     stakeAddress.transfer(msg.value);
 
-    // Security flaw here, ok for POC on testnet
+    // Security flaw here, OK for POC on testnet
     mint(msg.sender, msg.value);
 
     emit Staked(msg.sender, msg.value, stakers[msg.sender].time);
@@ -120,17 +120,17 @@ contract StakeToken is StakeTokenBase {
     view
     returns (uint)
   {
-    //uint min = 60000;
-    //uint mins5 = min.mul(5);
-    uint day = 86400000;
+    uint min = 60;
+    uint mins5 = min.mul(5);
+    uint day = 86400;
     uint month = day.mul(30);
     uint year = month.mul(12);
     uint percentGained = 0;
-    uint time = now - stakers[staker].time;
+    uint hope = now;
+    uint time = hope - stakers[staker].time;
 
-    // This is a very naive solution, ok for POC on testnet
-    //min5
-    if(time > 1) {
+    // This is a very naive solution, OK for POC on testnet
+    if(time > mins5) {
       percentGained = 1;
     } else if (time > day) {
       percentGained = 2;
